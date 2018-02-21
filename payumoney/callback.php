@@ -27,7 +27,7 @@
                 echo "<a href='../projects.php'>Take Me Back</a>";
             }else if($status === "success"){
                 require_once "../includes/project_sender.php";
-                send_project($_SESSION['user']['email'], $_SESSION['user']['name'], $productinfo.".zip");
+                send_project($_SESSION['user']['email'], $_SESSION['user']['name'], "_projects/".$productinfo.".zip");
                 echo "<h3>Thank You, Your order has successfully been placed!</h3>";
                 echo "<h4>Your Transaction ID is " . $txnid . ". You can record this for future reference.</h4>";
                 echo "You will recieve your project soon in your mail..!!";
