@@ -1,4 +1,8 @@
 <?php
+    if(!session_id()) {
+        session_start();
+    }
+
     require_once "init.php";
 
     if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['user']['eno'])){
