@@ -20,7 +20,7 @@
         // 2 = client and server messages
         $mail->SMTPDebug = 0;
         //Set the hostname of the mail server
-        $mail->Host = 'india.ownmyserver.com';
+        $mail->Host = '';
 
         // use
         // $mail->Host = gethostbyname('smtp.gmail.com');
