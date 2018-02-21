@@ -1,0 +1,93 @@
+        <style>
+            ul.nav>a>li{
+                background-color: #fff;
+            }
+            .project-language-list>a>li{
+                color: #000;
+            }
+        </style>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card card-image" style="background-image: url('templates/static/images/web-banner.jpg');background-size:cover;height:91vh !important;width:100vw">
+                    <div class="text-white text-center d-flex align-items-center justify-content-center rgba-black-strong py-5 px-4" style="height:91vh !important;">
+                        <div class="fadediv" style="display:none;">
+                            <h4 class="amber-text"><strong><i class="fa fa-cogs"></i> Projects and Synopsis</strong></h4>
+                            <h3 class="card-title pt-2"><strong>Are you searching for project ideas?</strong></h3>
+                            <p class="center-justified" style="max-width:45rem;">IgnouCalculator is a hub of projects on various programming language. Get a free project on a language of your own choice. You can also get projects that are of professional quality along with complete reports just by visiting our paid section.</p>
+                            <a href="#projects_list" id="project_smooth"><button id="free" class="btn btn-outline-white z-depth-5 animated slideInLeft" style="width: 270px !important;"><i class="fa fa-clone"></i>&nbsp;&nbsp;Free Project Prototypes</button></a>
+                            <button id="paid" class="btn btn-outline-white z-depth-5 animated slideInRight" onclick="(window.location = 'projects.php')" style="width: 270px !important;"><i class="fa fa-inr"></i>&nbsp;&nbsp;Assisted & Paid Projects</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="projects_list" style="display:none;">
+                <div class="col-md-2" >
+                    <br/>
+                    <nav class="nav-sidebar">
+                        <ul class="nav tabs list-group project-language-list">
+                            <span class="toggle-button">
+                                <li class="nav-item list-group-item list-group-item-danger" id="project-toggle">
+                                    <strong>Project Categories<i class="fa fa-bars my-toggle pull-right" style="display:none;"></i></strong>
+                                </li>
+                            </span>
+                            <div id="language_list">
+                                <a href="#tab1" data-toggle="tab"><li data-value="android" class="nav-item list-group-item">Android Projects</li></a>
+                                <a href="#tab1" data-toggle="tab"><li data-value="asp" class="nav-item list-group-item">Asp.Net Projects</li></a>
+                                <a href="#tab1" data-toggle="tab"><li data-value="c#" class="nav-item list-group-item">C# Projects</li></a>
+                                <a href="#tab1" data-toggle="tab"><li data-value="c++" class="nav-item list-group-item">C/C++ Projects</li></a>
+                                <a href="#tab1" data-toggle="tab"><li data-value="java" class="nav-item list-group-item">Java Projects</li></a>
+                                <a href="#tab1" data-toggle="tab"><li data-value="php" class="nav-item list-group-item">PHP Projects</li></a>
+                                <a href="#tab1" data-toggle="tab"><li data-value="vb" class="nav-item list-group-item">VB Projects</li></a>
+                                <a href="#tab1" data-toggle="tab"><li data-value="more" class="nav-item list-group-item">More Projects</li></a>
+                                <input type="text" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                            </div>
+                        </ul>
+                    </nav>
+                </div>
+                <hr/>
+                <div class="col-md-10 tab-content">
+                    <br/>
+                    <div class="tab-pane active" id="default">
+                        <img src="templates/static/images/project.png" class="img-fluid" alt="projects"/>
+                        <br/>
+                        <p class="h4-responsive blue-text center-justified mt-5"><strong><i class="fa fa-connectdevelop"></i> Project Development</strong> </p>
+                        <p class="h6-responsive center-justified px-2"> As a partial requirement to completing BCA / MCA programme from IGNOU, every student must carry-out and complete a project in his / her field of expertise. The project does not compulsorily need to have a real life application but it must involve Software Development Life Cycle.</p><hr/>
+                        <p class="center-justified h4-responsive blue-text text-center mt-2"><strong><i class="fa fa-diamond"></i> Need Our Help ?</strong></p>
+                        <p class="h6-responsive center-justified px-2">If you're carrying out a project without the help of a guide and need a starting point then our free projects are a great way forward.</p>
+                        <p class="h6-responsive center-justified px-2">But in case if you are looking for a complete project (including synopsis and report) then you can go to our <a href='projects.php'>paid projects</a> page and get one.</p>
+                        <hr/><br/><br/>
+                    </div>
+                    <div class="tab-pane" id="tab1">
+                        <div id="projects"></div>
+                        <hr>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                new WOW().init();
+                $("div.fadediv").fadeIn(4000);
+                $(".toggle-button").click(function () {
+                    $("a>li").toggle();
+                });
+                $("#project_smooth").on('click', function (event) {
+                    smooth_scroller(this);
+                });
+                $("#free").on("click", function(event){
+                    event.preventDefault();
+                    $("#projects_list").toggle();
+                });
+                $("#language_list li").on("click", function(event){
+                    event.preventDefault();
+                    var p_type = $(this).data("value");
+                    var form_id = $("#form_id").val();
+                    fetch_projects(p_type, form_id);
+                });
+                
+                $("#projects").on("click", "#download", function(event){
+                    event.preventDefault();
+                    update_projects_counter(this);
+                });
+            });
+        </script>

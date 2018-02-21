@@ -1,0 +1,78 @@
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 view px-0 hm-black-strong" style="margin-top: 0 !important; height: 91vh !important; width: 100vw !important">
+                    <div class="img-full-screen" style="background-image: url('templates/static/images/assign.jpg'); background-size: cover; height: 91vh !important;"></div>
+                    <div class="mask flex-center">
+                        <h1 class="white-text h1-responsive border px-2 py-2 mx-4 assign-status-text text-center">Assignments Submission Status</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron ">
+                        <h2 class="flex-center h2-responsive text-center">Get Your Assignments & Projects Submission Status</h2>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="h6-responsive center-justified" style="max-width:45rem;">Just enter your enrollment number and programme to check whether your assignments have been evaluated or not.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-3 px-2">
+                <div class="col-md-12 alert alert-info alert-dismissable center-justified">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong><i class="fa fa-hand-o-right animated 1s slideInRight" aria-hidden="true"></i>&nbsp;&nbsp;Dear visitors, displaying of results could take some time based on server load and traffic, Do not refresh the page in the meantime for expected response.</strong>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form name="status_form" id="status_form" class="md-form form-inline justify-content-center" autocomplete="off">
+                        <div class="md-form form-group pl-5">
+                            <input type="text" class="form-control text-center" size="40" name="eno" id="eno" placeholder="<?php if(isset($_SESSION['user']['eno'])) echo $_SESSION['user']['eno']; else echo 'Enter Your Enrollment Number'; ?>"/>
+                        </div>
+                        <div class="md-form form-group pl-5">
+                            <select name="program" id="program" class="program custom-select form-control standard">
+                                <option disabled selected>Programme</option>
+                                <?php
+                                    foreach($this->programmes as $progs){
+                                        echo "<option value='".$progs['p_name']."'>".$progs['p_name']."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>    
+                        <div class="md-form form-group pl-5 pt-2">
+                            <input type="text" class="form-control" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                            <button class="btn btn-outline-black" name="submit" id="submit"> Submit <i class="fa fa-paper-plane"></i></button>
+                        </div>
+                    </form>        
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="status-table" class='table table-striped table-bordered text-center'></table>    
+                </div>
+            </div>
+            <div class="row" id="instructions">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 mb-5">
+                    <ul class="list-group text-justify">
+                        <li class="list-group-item list-group-item-success text-center"><strong>Instructions</strong></li>
+                        <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;IgnouCalculator provides this very handy tool for students to check their assignments submission status.</li>
+                        <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;Students can also get help in completing their assignment work through this site, just follow the link <a href="assignments/" target="_blank" class="blue-text">here</a> to get solved assignments.</li>
+                        <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;All data that is displayed here is acquired from IGNOU's official site and is already in public domain.</li>
+                        <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;IgnouCalculator is not liable for any privacy violation, as the information is provided by IGNOU online.</li>
+                    </ul>  
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $(".standard").customselect();
+
+                $("#status_form").submit(function (event) {
+                    event.preventDefault();
+                    get_assignment_status();
+                    $("#instructions").hide();
+                });
+            });
+        </script>

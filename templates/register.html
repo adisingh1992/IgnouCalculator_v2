@@ -1,0 +1,98 @@
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <section class="section pb-3 text-center mx-0" style="min-width:100%;margin:0px !important;padding:0px !important;">
+                            <h2 class="h2-responsive pt-4">Become a Member</h2>
+                            <p class="mx-2">Welcome to IgnouCalculator's registration process. By registering you will be able to access all the awesome tools offered by us!</p>
+                            <div class="row mx-0 px-0">
+                                <div class="col-lg-8 col-md-12 mb-r mx-auto ">
+                                    <div class="card testimonial-card">
+                                        <div class="card-up blue lighten-2" style="min-height:150px !important;z-index:0"></div>
+                                        <div class="avatar" style="margin-top:-75px !important;z-index:2;">
+                                            <img src="<?php echo $_SESSION['user']['image']; ?>" height="150" width="150" alt="avatar" class="rounded-circle img-responsive" style="border:10px solid #fafafa"/>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title mt-1"><?php echo $_SESSION['user']['name']; ?></h4>
+                                            <h5 class="card-title text-muted"><?php echo $_SESSION['user']['email']; ?></h5>
+                                            <hr>
+                                            <p><i class="fa fa-quote-left"></i> Just one more step and you will be a member of <strong class="text-info">IGNOUCALCULATOR</strong> will full site-wide access!</p>
+                                            <br/>
+                                            <form method="POST" action="register.php" autocomplete="off">
+                                                <div class="md-form">
+                                                    <div class="row">
+                                                        <div class="col-md-10 mx-auto">
+                                                            <input type="text" name="eno" id="eno" class="form-control text-center" placeholder="Enter Your Enrollment Number"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6 py-1">
+                                                            <select class="custom-select standard form-control" name='rc'>
+                                                                <option disabled selected>Regional Center</option>
+                                                                <?php
+                                                                foreach($this->regional_centers as $rc){
+                                                                echo "<option value='".$rc['rc_id']."'>".$rc['rc_name']."</option>";
+                                                                }
+                                                                ?>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6 py-1">
+                                                            <select class="custom-select standard form-control" name='sc'>
+                                                                <option disabled selected>Study center</option>
+                                                                <?php
+                                                                foreach($this->study_centers as $sc){
+                                                                echo "<option value='".$sc['sc_name']."'>".$sc['sc_name']."</option>";
+                                                                }
+                                                                ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="md-form">
+                                                    <div class="content px-3">
+                                                        <select name="progs[]" multiple="multiple" id="progs" class="2col active">
+                                                            <?php
+                                                            foreach($this->programmes as $progs){
+                                                            echo "<option value='".$progs['p_id']."'>".$progs['p_name']."</option>";
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="md-form">
+                                                    <div class="row flex-center">
+                                                        <input type="text" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                                                        <button type="submit" class="btn btn-outline-black">Submit</button>
+                                                    </div>
+                                                </div>
+                                                <small class="text-muted">By creating an account, you agree to our <a href="terms-and-conditions.php" target="_blank"><strong class="text-danger">Terms & Conditions</strong></a></small>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $('select[multiple].active.2col').multiselect({
+                    columns: 2,
+                    placeholder: 'Select your programe',
+                    search: true,
+                    searchOptions: {
+                        'default': 'Search programe'
+                    },
+                    selectAll: false
+                });
+
+            });
+
+            $(function () {
+                $(".standard").customselect();
+            });
+        </script>

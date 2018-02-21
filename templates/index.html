@@ -1,0 +1,191 @@
+        <div class="container-fluid">
+            <div class="row my-0">
+                <div class="col-md-12 view px-0 hm-cyan-slight" style="margin-top: 0 !important; height: 91vh !important; width: 100vw !important">
+                    <div class="img-full-screen" style="background-image: url('templates/static/images/banner.jpg'); background-size: cover; height: 91vh !important;"></div>
+                    <div class="mask flex-center text-center">
+                        <h1 class="site-title white-text h1-responsive border" style="border:2px solid white;padding:10px;">IGNOU CALCULATOR</h1>
+                        <h1 class="mobile-site-title white-text h1-responsive" style="font-family: georgia;border:1px solid white; padding:8px;border-radius:3px;display:none;"><span class="animated 1s fadeIn" style="background-color:;box-shaodw:transparent;font-size:20px;font-weight:400;">i C A L C</span></h1>
+                    </div>
+                    <div class="scrolling_button" style="margin-top:-25px">
+                        <div class="col-md-12 text-center">
+                            <a class="btn animated fadeInDown" href="#grade-card" id="my_scroll" style="margin-top:-65px;background-color:transparent;box-shadow:none;"><i class="fa fa-angle-double-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 py-2">
+                    <marquee onmouseover="this.stop();" onmouseout="this.start();"><?php foreach($this->news as $n){ echo " <<".$n.">> "; } ?></marquee>
+                </div>
+            </div>
+            <div class="row border border-top-0 border-left-0 border-right-0 py-2" id="grade-card">
+                <div class="col-md-12 text-center" style="overflow:hidden;">
+                    <h3 class="h3-responsive text-black py-3"><strong>Analysis of Grades</strong></h3>
+                    <h5>IgnouCalculator not just provides percentage calculations, rather an in-depth analysis of your marks</h5>
+                    <div class="animated 1s fadeInUp">
+                        <a href="bca-grade-card.php"><button class="btn btn-outline-black">BCA CALCULATOR</button></a>
+                        <a href="mca-grade-card.php"><button class="btn btn-outline-black">MCA CALCULATOR</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col-md-12 py-3">
+                    <h6 class="h6-responsive ml-3 mr-3 text-justify" style="line-height:180% !important"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Welcome to IgnouCalculator -- an information resource designed to help you get a more comprehensive analysis of your grades. Click around and you will find a variety of analysis tools. There are calculators that can help you get a clearer picture of where you stand and where you're headed.</h6>
+                    <h6 class="h6-responsive ml-3 mr-3 text-justify" style="line-height:180% !important"><i class="fa fa-angle-double-right" aria-hidden="true"></i> IgnouCalculator hosts a library from where you can download official course material, assignments, question papers etc. Students can also access guidelines and solutions for assignments and project works, required to be completed during a programme. Also check-back often as we're constantly updating and adding new materials.</h6>
+                    <h6 class="h6-responsive ml-3 mr-3 text-justify" style="line-height:180% !important"><i class="fa fa-angle-double-right" aria-hidden="true"></i> If you have a specific question or want more information on any topic, just fill out the feedback form at the bottom of the page and we will get back to you as soon as possible.</h6>
+                </div>
+            </div>
+            <div class="row py-4">
+                <div class="col-md-4 py-2">
+                    <div class="card card-cascade narrower wow flipInY" data-wow-delay="0.1s">
+                        <div class="view overlay hm-white-slight">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/code.jpg" class="b-lazy download-section-image img-fluid" alt="narrower" style="max-width:100% !important">
+                            <a href="project-and-synopsis.php">
+                                <div class="mask flex-center py-3"><h3 class="text-white h3-responsive black darken-4 waves-light waves-effect" style="border:5px solid white;">&nbsp;&nbsp;Download Projects&nbsp;&nbsp;</h3></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="project-and-synopsis.php"><h5 class="pink-text"><i class="fa fa-download"></i> Project / Synopsis Prototypes</h5></a>
+                            <h4 class="card-title">BCA &amp; MCA Projects / Synopsis</h4>
+                            <p class="card-text text-justify">We have a number of free projects categorized under several web programming languages. We also provide a paid alternative under which a student can enroll to get experts help in completing their project work.</p>
+                            <a href="project-and-synopsis.php"><button class="btn btn-outline-black">Let's Download</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-2">
+                    <div class="card card-cascade narrower wow flipInY" data-wow-delay="0.1s">
+                        <div class="view overlay hm-white-slight">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/assignment.jpg" class="b-lazy img-fluid" alt="narrower" style="max-width:100% !important">
+                            <a href="/assignments/">
+                                <div class="mask flex-center py-3"><h3 class="text-white h3-responsive black darken-4 waves-light waves-effect" style="border:5px solid white;">&nbsp;&nbsp;Solved Assignments&nbsp;&nbsp;</h3></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="/assignments/"><h5 class="pink-text"><i class="fa fa-diamond"></i> IGNOU Solved Assignments</h5></a>
+                            <h4 class="card-title">Get Solved Assignments</h4>
+                            <p class="card-text text-justify">We provide solved assignments for BCA &amp; MCA courses. The solution set is concise, to-the-point, and definitive which help students get a clearer direction in formulating their own.</p>
+                            <a href="/assignments/"><button class="btn btn-outline-black">Get Free Assignments</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-2">
+                    <div class="card card-cascade narrower wow flipInY" data-wow-delay="0.1s">
+                        <div class="view overlay hm-white-slight">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/study.jpg" class="b-lazy img-fluid" alt="narrower" style="max-width:100% !important;">
+                            <a href="books.php">
+                                <div class="mask flex-center py-3"><h3 class="text-white h3-responsive black darken-4 waves-light waves-effect" style="border:5px solid white;">&nbsp;&nbsp;Study Materials&nbsp;&nbsp;</h3></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="books.php"><h5 class="pink-text"><i class="fa fa-pencil-square-o"></i> IGNOU Study Materials</h5></a>
+                            <h4 class="card-title">Download IGNOU Books</h4>
+                            <p class="card-text text-justify">Here is the easiest way to get free access to all semesters BCA / MCA course material. All units of every course is combined in one PDF separately to provide maximum convenience to the students.</p>
+                            <a href="books.php"><button class="btn btn-outline-black">Get Ignou Books now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-4">
+                <div class="col-md-7 mt-2">
+                    <h3 class="h3-responsive text-center"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/webDevelopment.png" height="25px" width="35px" alt="web_icon" class="b-lazy">&nbsp;<strong class="text-success">Project Development &amp; Implementation Ideas</strong></h3>
+                    <h5 class="h5-responsive text-center"><strong>WE HAVE A TEAM OF EXPERTS</strong></h5>
+                    <h6 class="h6-responsive mr-2 ml-2 center-justified" style="line-height:180%">Any project manager will tell you that the process of project planning is just as important as the actual development itself. For IGNOU Students it is compulsory for students of BCA / MCA programme to submit Final Year Project and Synopsis. With our team of experts you can create a Project / Synopsis better than others. With the help of our team, students can convert their ideas into reality.</h6>
+                    <div class="text-center"><a href="project-and-synopsis.php"><button class="btn btn-outline-success wow fadeInDown" data-wow-delay="0.4s">Get Project Ideas</button></a></div>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-4 mt-4">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/webtool.jpg" class="b-lazy img-responsive img-fluid" alt="webtool">
+                </div>
+            </div>
+            <div class="row py-5 border border border-botttom-0 border-left-0 border-right-0">
+                <div class="col-md-12">
+                    <h3 class="h3-responsive text-info text-center">
+                        <strong>Preparation For Term-End Exams?</strong>
+                    </h3>
+                    <div class="center-justified">
+                        <p class="h6-responsive mx-2">Team IgnouCalculator got you covered here too! We provide video tutorials for crucial courses like BCS-012, BCS-042, MCS-031 etc. Access video tutorials along with proper guidance of typical subjects by our team and crack IGNOU term-end exams easily.</p>
+                        <div class="text-center"><a href="videos.php"><button class="btn btn-rounded special-color-dark waves-effect" >Check it now</button></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col-md-6 center-justified my-auto" style="height:80% !important;">
+                    <p class="h2-responsive btn-outline-info mx-auto wow fadeInUp text-center" data-wow-delay="0.5s" style="width:250px !important;"><strong>Get In Touch</strong></p>
+                    <p class="lead pt-3 mx-2">To improve user experience and provide much more useful content in the future, it is imperative that our users provide their feedbacks. These feedbacks will help IgnouCalculator become more user-friendly than it currently is.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="feed-conatiner">
+                        <p class="h4 text-center text-capitalize text-white py-3 feed-title" >We love your opinion</p>
+                        <form class="px-4" id="feedback_form">
+                            <div class="md-form">
+                                <i class="fa fa-user prefix grey-text"></i>
+                                <input type="text" id="name" class="form-control" required>
+                                <label for="name">Your name</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix grey-text"></i>
+                                <input type="email" id="mail" class="form-control" required>
+                                <label for="mail">Your email</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fa fa-tag prefix grey-text"></i>
+                                <input type="text" id="subject" class="form-control" required>
+                                <label for="subject">Subject</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fa fa-pencil prefix grey-text"></i>
+                                <textarea type="text" id="msg" class="md-textarea" style="height: 50px"></textarea>
+                                <label for="msg">Your message</label>
+                            </div>
+                            <div class="md-form">
+                                <div>
+                                    <img src="captcha.php" id="img_captcha" alt="captcha" class="pull-left" height="50px" width="40px"/>
+                                    <input type="text" placeholder="Enter captcha code" id="captcha" class="form-control pull-right" style="max-width:450px;" required/>
+                                    <input type="text" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                                </div>
+                                <br>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-blue-grey wow zoomIn" data-wow-delay="1s">Say hello <i class="fa fa-send-o"></i></button><br/>
+                                    <i class="text-danger" id="feedback_result"></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>       
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/calc2.png" class="b-lazy img-fluid" style="height:350px !important" alt="calc"/>
+                </div>
+                <div class="col-md-6 text-center py-5">
+                    <span class="h3-responsive"><strong>{ code_with_us }</strong></span>
+                    <p class="h4-responsive"><strong>Get access to a vast library of project prototypes</strong></p>
+                    <p id="counter" class="text-white h2-responsive mx-auto text-custom">
+                        <span class="counter-value" data-count="1000">0</span><sup>+</sup>&nbsp;free Projects</p>
+                    <p class="h1-responsive" >It's free
+                        <a href="project-and-synopsis.php"><button class="btn btn-outline-danger wow flipInY" data-wow-delay="1s">Join us Today</button></a>
+                    </p>
+                </div> 
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                new WOW().init();
+                smooth();
+
+                $("#feedback_form").submit(function(event){
+                    event.preventDefault();
+                    var username = $("#name").val();
+                    var email = $("#mail").val();
+                    var subject = $("#subject").val();
+                    var msg = $("#msg").val();
+                    var captcha = $("#captcha").val();
+                    var form_id = $("#form_id").val();
+                    submit_feedback(username, email, subject, msg, captcha, form_id);
+                });
+                
+                $("#my_scroll").on('click', function(event) {
+                    smooth_scroller(this);
+                });
+            });
+        </script>

@@ -1,0 +1,88 @@
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body text-justify text-center">
+                            <div class="card-title d-flex justify-content-center">
+                                <h3 class="h3-responsive">Welcome To IgnouCalculator's Student List Section</h3>
+                            </div>
+                            <p class="h6-responsive blue-text card-text">Wanna Know Who Your Classmates Are?</p>
+                            <p class="card-text h5-responsive center-justified">Get list of all the students enrolled in a session in a particular study center, just fill the form below to get the details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="row px-2">
+                <div class="col-md-12 alert alert-info alert-dismissable center-justified">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong><i class="fa fa-hand-o-right animated 1s slideInRight" aria-hidden="true"></i>&nbsp;&nbsp;Dear visitors, displaying of results could take some time based on server load and traffic, Do not refresh the page in the meantime for expected response.</strong>
+                </div>
+            </div>
+            <div class="row pt-3 pb-0">
+                <div class="col-md-12 ">
+                    <form class="form-inline md-form justify-content-center" name="list_form" id="list_form" autocomplete="off">
+                        <div class="md-form form-group pl-5">
+                            <select name="program" id="program" class="program custom-select form-control standard">
+                                <option disabled selected>Programme</option>
+                                <?php
+                                    foreach($this->programmes as $progs){
+                                    echo "<option value='".$progs['p_name']."'>".$progs['p_name']."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="md-form form-group pl-5">
+                            <select name="admit_year" id="admit_year" class="standard custom-select form-control">
+                                <option disabled selected>Session</option>
+                                <?php
+                                    echo $this->admit_year;
+                                ?>
+                            </select>
+                        </div>
+                        <div class="md-form form-group pl-5">
+                            <select name="sc" id="sc" class="standard custom-select form-control">
+                                <option disabled selected>Study Center</option>
+                                <?php
+                                    foreach($this->study_centers as $sc){
+                                    echo "<option value='".$sc['sc_name']."'>".$sc['sc_name']."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="md-form form-group pl-5 pt-2">
+                            <input type="text" class="form-control" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                            <button class="btn btn-outline-black" id="submit" name="submit">Submit <i class="fa fa-paper-plane"></i></button>     
+                        </div>
+                    </form>             
+                </div>
+            </div>
+            <hr>
+            <div class="row"><div class="col-md-12"><div id="student_list"></div></div></div>
+            <div id="instructions">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 mb-1">
+                        <ul class="list-group text-justify">
+                            <li class="list-group-item list-group-item-success text-center"><strong>Instructions</strong></li>
+                            <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;Get complete list of students of any study center and session.</li>
+                            <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;All data that is displayed here is acquired from IGNOU's official site and is already in public domain.</li>
+                            <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;IgnouCalculator is not liable for any privacy violation, as the information is provided by IGNOU online.</li>
+                            <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;If you have any query or suggestion, we will be more than happy to hear it. You can share your opinion via this <a href="index.php#feedback_form" class="blue-text"> feedback form.</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $(".standard").customselect();
+
+                $("#list_form").submit(function (event) {
+                    event.preventDefault();
+                    get_student_list();
+                    $("#instructions").hide();
+                });
+            });
+        </script>

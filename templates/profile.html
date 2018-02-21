@@ -1,0 +1,258 @@
+<style>
+    input[type=date]::-webkit-inner-spin-button, 
+    input[type=date]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0; 
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0; 
+    }
+</style>
+<div class="container-fluid">
+    <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header light-blue darken-3 white-text py-3 mt-1">
+                    <h6 class="title h6-responsive"><i class="fa fa-pencil-square-o"></i>Update Profile</h6>
+                    <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" id="modal-close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body mb-0">
+                    <form class="px-1" id="update-form" autocomplete="off">
+                        <div class="md-form">
+                            <i class="fa fa-calendar-check-o prefix" id="dob"></i>
+                            <input type="text" class="form-control" placeholder="Pick Your DOB" id="date" onfocus="(this.type = 'date')"/>
+                        </div>
+                        <div class="md-form ">
+                            <i class="fa fa-address-card-o prefix"></i>
+                            <input type="text" id="textarea1" class="md-textarea" placeholder="Enter Your Address" maxlength="120"/>
+                        </div>
+                        <div class="md-form">
+                            <i class="fa fa-phone prefix"></i>
+                            <input name="mobile" id="mobile" type="number" placeholder="Enter Your Contact Number" maxlength="10"/>
+                        </div>
+                        <div class="text-center mt-1-half">
+                            <button class="btn btn-info mb-2" type="submit">Update <i class="fa fa-send ml-1"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--Content-->
+        </div>
+    </div>
+    <div class="row">
+        <section class="section pb-3 text-center" style="min-width:80%;margin:0px !important;padding:0px !important;">
+            <div class="row mx-0 px-0">
+                <div class="col-lg-12 col-md-12 mb-r" style="padding:0px !important; margin:0px !important;">
+                    <div class="card testimonial-card mx-0">
+                        <div class="card-up mdb-color darken-1" style="min-height:125px !important; z-index:0"></div>
+                        <div class="avatar" style="margin-top:-75px !important;width:200px !important;z-index:2 !important;">
+                            <img src="<?php echo $_SESSION['user']['image']; ?>" height="150" width="150" alt="avatar" class="rounded-circle img-responsive" style="border:10px solid #fafafa;">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title mt-1"><strong style="font-family:'Verdana'"><?php echo $_SESSION['user']['name']; ?></strong></h4>
+                            <h6 class="card-title"><span class="text-muted">&lt; <?php echo $_SESSION['user']['email']; ?> /&gt;</span></h6>
+                            <br/>
+                            <hr style="z-index:0">
+                            <div class="row flex-center" style="z-index:1">
+                                <a href="" data-toggle='modal' data-target='#modalContactForm'><div class="white border mx-3 px-2" style="width:180px;margin-top:-33px;line-height:2;border-radius:20px;cursor:pointer">Update Your Profile</div></a>
+                            </div>
+                            <div class="row my-4 blue lighten-5">
+                                <div class="col-md-12 border border-left-0 border-right-0">
+                                    <marquee onmouseover="this.stop();" onmouseout="this.start();"><p class="my-2"><?php foreach($this->news as $n){ echo " <<".$n.">> "; } ?></p></marquee>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-md-12">
+                                    <h4 class="h4-responsive px-3 text-center"><span class="text-muted">[</span> University Information <span class="text-muted">]</span></h4>
+                                </div>
+                            </div>
+                            <div class="row border border-left-0 border-right-0 py-2">
+                                <div class="col-md-4 pt-1">
+                                    <div class="row">
+                                        <div class="col-6 text-right">Enrollment No&nbsp;:</div>
+                                        <div class="col-6 text-left"><span class="text-muted"><?php echo $_SESSION['user']['eno']; ?></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pt-1">
+                                    <div class="row border border-bottom-0 border-top-0">
+                                        <div class="col-6 text-right">Regional Center&nbsp;:</div>
+                                        <div class="col-6 text-left"><span class="text-muted"><?php echo $_SESSION['user']['rc']; ?></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pt-1">
+                                    <div class="row">
+                                        <div class="col-6 text-right">Study Center&nbsp;:</div>
+                                        <div class="col-6 text-left"><span class="text-muted"><?php echo $_SESSION['user']['sc']; ?></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row mt-4">
+                                <div class="col-md-12">
+                                    <h4 class="h4-responsive px-3 text-center"><span class="text-muted">[</span> Personal Information <span class="text-muted">]</span></h4>
+                                </div>
+                            </div>
+                            <div class="row border border-left-0 border-right-0 border-bottom-0 py-2">
+                                <div class="col-md-12 pt-1">
+                                    <div class="row">
+                                        <div class="col-4 text-right">Address&nbsp;:</div>
+                                        <div class="col-8"><span class="text-muted text-capitalize"><?php echo ($_SESSION['user']['address'] !== "" ? $_SESSION['user']['address'] : "<a href='' data-toggle='modal' data-target='#modalContactForm'>Not Available! Click here to update</a>"); ?></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border border-left-0 border-right-0 py-2">
+                                <div class="col-md-4 pt-1">
+                                    <div class="row">
+                                        <div class="col-6 text-right">Contact No&nbsp;:</div>
+                                        <div class="col-6 text-left"><span class="text-muted"><?php echo ($_SESSION['user']['contact'] !== "" ? "+91-".$_SESSION['user']['contact'] : "<a href='' data-toggle='modal' data-target='#modalContactForm'>Not Available! Update</a>"); ?></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pt-1">
+                                    <div class="row border border-bottom-0 border-top-0">
+                                        <div class="col-6 text-right">Date of Birth&nbsp;:</div>
+                                        <div class="col-6 text-left"><span class="text-muted"><?php echo ($_SESSION['user']['dob'] !== "" ? $_SESSION['user']['dob'] : "<a href='' data-toggle='modal' data-target='#modalContactForm'>Not Available! Update</a>"); ?></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pt-1">
+                                    <div class="row">
+                                        <div class="col-6 text-right">Gender&nbsp;:</div>
+                                        <div class="col-6 text-left"><span class="text-muted text-capitalize"><?php echo $_SESSION['user']['gender']; ?></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="h6-responsive mb-4"><i class="fa fa-quote-left"></i> IgnouCalculator provides a one-all platform for IGNOU students allowing them to breeze through their study term, minimizing the hassles as much as possible. <i class="fa fa-quote-right"></i></p>
+                                    <br/>
+                                    <div class="tabs-wrapper">
+                                        <ul class="nav classic-tabs cyan" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link waves-light active" data-toggle="tab" href="#panel51" role="tab">IGNOU Hall Ticket</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link waves-light" data-toggle="tab" href="#panel52" role="tab">Online Re-Registration</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content card">
+                                        <div class="tab-pane fade in show active" id="panel51" role="tabpanel">
+                                            <p class="h6-responsive mt-4 mb-2 mx-3 center-justified">
+                                                Hall-ticket or the Admit card is compulsory for entrance at your examination center, You can download your Term-end Hall-ticket using the form below now.
+                                            </p> 
+                                            <form name="admit_form" id="admit_form" class="flex-center form-inline py-2" method="POST" target="_blank" autocomplete="off">
+                                                <div class="form-group mx-auto">
+                                                    <input type="text" id="eno" name="eno" value="<?php echo $_SESSION['user']['eno']; ?>" class="text-center" placeholder="Enter Enrollment Number"/>
+                                                </div>
+                                                <div class="form-group mx-auto">
+                                                    <select class="standard custom-select form-control" name='session' id="session" required>
+                                                        <option disabled selected>Select Session</option>
+                                                        <option value="12<?php echo substr((date('Y') -1), -2); ?>">Dec <?php echo date('Y') -1; ?></option>
+                                                        <option value="06<?php echo substr(date('Y'), -2); ?>">June <?php echo date('Y'); ?></option>
+                                                        <option value="12<?php echo substr(date('Y'), -2); ?>">Dec <?php echo date('Y'); ?></option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group mx-auto">
+                                                    <select class="standard custom-select form-control" name='program' id="program">
+                                                        <option disabled selected>Select Programme</option>
+                                                        <?php
+                                                            foreach($this->programmes as $progs){
+                                                                echo "<option value='".$progs['p_name']."'>".$progs['p_name']."</option>";
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                    <input type="hidden" value='OK' name=hidden_submit>
+                                                    <input type="text" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                                                    <button class="mt-2 mx-4 btn btn-outline-black btn-sm" type="submit" name="submit" id="admit_submit"><i class="fa fa-paper-plane"></i> Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane fade" id="panel52" role="tabpanel">
+                                            <p class="h6-responsive my-4 mx-3">
+                                                Online Re-registration is the process to pay your next semester fee.Pay your semester fee by us. Online Re-Registration System is activated for Indian Nationals Only. The foreign National Students can apply in Offline.
+                                                <br/>
+                                                <a href="https://onlineadmission.ignou.ac.in/onlinerr/StudentReRegistrationForm.aspx" target="_blank" class="btn btn-outline-black btn-sm waves-effect animated 1s zoomIn">Register now</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-5 border border-left-0 border-right-0">
+                                <div class="col-md-12 px-3 py-2">
+                                    <p class="h6-responsive center-justified">Dear <?php echo $_SESSION['user']['name']; ?> you are currently enrolled under following programmes in IGNOU. Get a comprehensive analysis of your Programme performance in graphical representation, carefully plotted on various charts and tables.</p>
+                                </div>
+                                <div class="col-md-12">
+                                    <?php
+                                        foreach($this->user_programmes as $prog){
+                                            echo "<button class='course btn btn-outline-black btn-sm' value='".$prog['p_name']."'>".$prog['p_name']."</button>";
+                                        }
+                                    ?>
+                                    <br/>&nbsp;
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="button" class="close waves-effect waves-light text-right" aria-label="Close" onclick="($('#courses').hide()); ($('#chart').hide()); ($('#chart_caption').hide()); $(this).hide()" id="course-close" style="display: none;">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6" id="courses"></div>
+                                <div class="col-md-6" id="chart"><div class="ct-chart ct-perfect-fourth"></div><lead id="chart_caption" class="center-justified" style="display: none;">Semester Performance Chart<br/><div class='row'><strong class='col-md-6'>Performance Line <span class=text-danger>===</span></strong><strong class='col-md-6'> <span class=text-warning>===</span> Semester Median</strong></div></lead></div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-md-6">
+                                    <span class="text-muted">You are currently logged-in via <strong class="blue-text"><?php echo ($_SESSION['user']['source'] === 'f' ? "Facebook" : "Google"); ?></strong></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <small>Last log-in at:<span class="text-muted"> <?php echo date('Y-m-d H:i:s', $_SESSION["user"]["expiry"]-(3600*24*60)); ?></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $("#admit_submit").on("click", function(event){
+            get_admit_card();
+            return;
+        });
+
+        $("#update-form").on("submit", function(event){
+            event.preventDefault();
+            var contact = $("#mobile").val();
+            var dob = $("#date").val();
+            var address = $("#textarea1").val();
+            update_profile(contact, dob, address);
+            window.scrollTo(0, 0);
+            $("#modal-close").click();
+            window.setTimeout(location.reload(), 3000);
+        });
+
+        $(".course").on("click", function(event){
+            $("#course-close").show();
+            $("#courses").show();
+            $("#chart").show();
+            $("#chart_caption").show();
+            generate_course_table($(this).val());
+        });
+
+        $(".standard").customselect();    
+    });
+</script>

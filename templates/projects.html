@@ -1,0 +1,324 @@
+<!-- modal -->
+<div class="modal fade top" id="modalContact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     data-backdrop="false">
+    <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
+        <div class="modal-content">
+            <div class="modal-body" style="background:linear-gradient(to top,#fff,#fafafa);">
+                <div class="row d-flex justify-content-center">
+                    <h4 class="h4-responsive text-center animated zoomIn"><i class="fa fa-clone grey-text"></i> We need your contact number !!</h4>
+                </div>
+                <hr>
+                <div class="row d-flex justify-content-center py-0">
+                    <form action="payumoney/payment.php" method="POST" autocomplete="off" class="form-inline md-form">
+                        <div class="form-group md-form pl-4">
+                            <input type="text" class="form-control text-center" size="40" placeholder="Enter your number" required name="phone"/>
+                            <input type="text" name="project_id" id="project_id" hidden required/>
+                            <input type="text" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                        </div>
+                        <div class="form-group md-form pl-4 mt-3">
+                            <button class="btn btn-outline-black">Proceed to pay <i class="fa fa-chevron-circle-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <hr class="mt-0">
+                <a class="pull-right" data-dismiss="modal"><span class="text-muted"><small><i>Not-now</i></small></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of modal -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="overflow:hidden;">
+            <a href="#project-list" id="project_smooth"><div class="animated slideInRight pull-right go-to-project border text-justify rounded" data-toggle="tooltip" data-placement="left" title="See Project list"><i class="fa fa-eye white-text"></i></div></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/assist_project.png" class="b-lazy img-fluid" alt="project">
+        </div>
+        <div class="col-md-9 animated 1s fadeIn">
+            <div class="d-flex justify-content-center text-center">
+                <p class="pt-5 h3-responsive font-bold pink-text">
+                    <i class="fa fa-diamond"></i> Why Choose Us ?
+                </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="center-justified h5-responsive" style="max-width:46rem">
+                    IgnouCalculator provides these projects after thorough testing and validation, the projects are fully working and contains a complete copy of synopsis and report. The projects are based on real-world problems which allows the student to get a macro-view of software development.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 animated 1s fadeIn">
+            <div class="d-flex justify-content-center text-center">
+                <p class="pt-5 h3-responsive font-bold pink-text">
+                    <i class="fa fa-american-sign-language-interpreting"></i> Awesome UI / UX
+                </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="center-justified h5-responsive" style="max-width:46rem">
+                    The projects under this section are equipped with awesome user-interfaces which in-turn provides great user-experience.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/responsive.png" class="b-lazy img-fluid" alt="UI-responsive"/>
+        </div>
+    </div>
+    <div class="row">        
+        <div class="col-md-4">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/database.png" class="b-lazy img-fluid" alt="database"/>
+        </div>
+        <div class="col-md-8 animated 1s fadeIn">
+            <div class="d-flex justify-content-center text-center">
+                <p class="pt-5 h3-responsive font-bold text-justify pink-text">
+                    <i class="fa fa-database"></i> Quality Database
+                </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="center-justified h5-responsive" style="max-width:46rem">
+                    Normalized and well-secured database is implemented for each project under this section. Every query is thoroughly validated and sanitized before being passed to the database so as to prevent SQLinjection and other types of attacks. All projects contain a working copy of the database schema so as to minimize the implementation time and if any problem is encountered while running the project you can always contact us.<br /> <a href="index.php#feedback_form"><button class="btn btn-outline-pink">Ask a Question&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-circle-right fa-2x"></i></button></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">        
+        <div class="col-md-8 wow fadeIn" data-wow-delay="0.5s">
+            <div class="d-flex justify-content-center text-center">
+                <p class="pt-5 h3-responsive font-bold text-justify pink-text">
+                    <i class="fa fa-credit-card"></i> Pay Securely
+                </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="center-justified h5-responsive" style="max-width:46rem">
+                    To get a assisted project, we require a token amount so that our services are not abused and taken advantage of. But don't worry, the amount is negligible and you can pay easily using your Debit / Credit card in just one easy step.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/cards.png" class="b-lazy img-fluid" alt="cards"/>
+        </div>
+    </div>
+    <br/>
+    <div class="row wow fadeIn" data-wow-delay="0.5s" id="project-list">   
+        <div class="col-md-12 unique-color darken-4 z-depth-2">
+            <div class="d-flex justify-content-center text-center">
+                <h4 class="white-text h4-responsive py-3"><i class="fa fa-clone"></i>&nbsp;&nbsp;Browse the Projects</h4>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row wow fadeIn" data-wow-delay="1s">
+        <!-- First Project -->
+        <div class="col-md-4 mt-2">
+            <div class="card">
+                <div>
+                    <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-1" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-1" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="view hm-black-light">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Light mask</h3>
+                                    <p>First text</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="view hm-black-strong">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Strong mask</h3>
+                                    <p>Secondary text</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="view hm-black-slight">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Slight mask</h3>
+                                    <p>Third text</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-example-1" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="floating-button-div"><button class="btn btn-floating btn-pink pull-right buy" data-toggle="modal" data-target="#modalContact" id="TuitionGuruJi"><i class="fa fa-chevron-right"></i></button></div>
+                <div class="card-body">
+                    <h4 class="card-title pink-text center-justified youtube-video-title"><i class="fa fa-desktop"></i> TuitionGuruJi</h4><hr>
+                    <small class="blue-text pull-right"><i><cite>-An online platform to help tutors and parents to meet each other.</cite></i></small><br/>
+                    <p class="card-text text-justify youtube-video-description">We provide a platform to connect parents and teachers with each other. By becoming a member of TuitionGuruJi one can find a number of teaching jobs as per his / her convenience. Browse through a number of tuition jobs in Lucknow city or nearby areas with TuitionGuruJi.</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="pull-left"><a href="https://www.tuitionguruji.com" target="_blank">Visit Website</a></div>
+                    <a href="#" class="pull-right text-muted buy" data-toggle="modal" data-target="#modalContact" id="TuitionGuruJi"><i class="fa fa-download"></i> Get Project</a>
+                </div>
+            </div>
+        </div>
+        <!--End of first project-->
+        <!-- Second Project -->
+        <div class="col-md-4 mt-2">
+            <div class="card">
+                <div>
+                    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="view hm-black-light">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Light mask</h3>
+                                    <p>First text</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="view hm-black-strong">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Strong mask</h3>
+                                    <p>Secondary text</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="view hm-black-slight">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Slight mask</h3>
+                                    <p>Third text</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="floating-button-div"><button class="btn btn-floating btn-pink pull-right buy" data-toggle="modal" data-target="#modalContact" id="TuitionGuruJi"><i class="fa fa-chevron-right"></i></button></div>
+                <div class="card-body">
+                    <h4 class="card-title pink-text center-justified youtube-video-title"><i class="fa fa-desktop"></i> O P R S</h4><hr>
+                    <small class="blue-text pull-right"><i><cite>-Online Peer Review System.</cite></i></small><br/>
+                    <p class="card-text text-justify youtube-video-description">Online Peer Review System provides an online platform for article submission, peer review, document tracking, and semi­automatic correspondence with authors and reviewers. The main reason for developing such a system resides in the need for a simple review system that fulfill the needs of a much wider audience than the current systems and can be easily adapted to any future changes required.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="pull-left"><a href="#" class="text-muted">Visit Website</a></div>
+                    <a href="#" class="pull-right text-muted buy" data-toggle="modal" data-target="#modalContact" id="OnlinePeerReviewSystem"><i class="fa fa-download"></i> Get Project</a>
+                </div>
+            </div>
+        </div>
+        <!--End of second project-->
+        <!-- Third Project -->
+        <div class="col-md-4 mt-2">
+            <div class="card">
+                <div>
+                    <div id="carousel-example-3" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-3" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-3" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <div class="view hm-black-light">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Light mask</h3>
+                                    <p>First text</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="view hm-black-strong">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Strong mask</h3>
+                                    <p>Secondary text</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="view hm-black-slight">
+                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide" style="height:20rem !important;">
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="carousel-caption">
+                                    <h3 class="h3-responsive">Slight mask</h3>
+                                    <p>Third text</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carousel-example-3" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-example-3" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="floating-button-div"><button class="btn btn-floating btn-pink pull-right buy" data-toggle="modal" data-target="#modalContact" id="TuitionGuruJi"><i class="fa fa-chevron-right"></i></button></div>
+                <div class="card-body">
+                    <h4 class="card-title pink-text center-justified youtube-video-title"><i class="fa fa-desktop"></i> Ground-Zero</h4><hr>
+                    <small class="blue-text pull-right"><i><cite>-Online Competitive Programming Portal.</cite></i></small><br/>
+                    <p class="card-text text-justify youtube-video-description">Ground-Zero is an Online Competitive Programming Portal which is developed with the objective to allow students of Computer Science to practice and hone their programming skills. It provides an opportunity to students and individuals to practice programming at any time of the day.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="pull-left"><a href="#" class="text-muted">Visit Website</a></div>
+                    <a href="#" class="pull-right text-muted buy" data-toggle="modal" data-target="#modalContact" id="GroundZero"><i class="fa fa-download"></i> Get Project</a>
+                </div>
+            </div>
+        </div>
+        <!--End of third project-->
+    </div>
+    <br/>
+</div>
+<script>
+    $(document).ready(function () {
+        new WOW().init();
+        $('[data-toggle="tooltip"]').tooltip()
+        $("#project_smooth").on('click', function (event) {
+            smooth_scroller(this);
+        });
+        
+        $(".buy").on("click", function () {
+            $("#project_id").val($(this).attr("id"));
+        });
+    });
+</script>

@@ -1,0 +1,93 @@
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 view px-0 hm-black-strong" style="margin-top: 0 !important; height: 91vh !important; width: 100vw !important">
+                    <div class="img-full-screen" style="background-image: url('templates/static/images/std_details.jpg'); background-size: cover; height: 91vh !important;"></div>
+                    <div class="mask flex-center">
+                        <h1 class="white-text book-title h1-responsive border px-2 py-2 mx-5 pull-left text-center">Curious About Student Details ?</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-center">
+                <div class="py-2 px-2 jumbotron jumbotron-badge danger-color wow fadeInUp" style="margin-top:-4% !important;z-index:1;">
+                    <a href="#" data-toggle="modal" data-target="#myModal" id="modal-launcher"><h3 class="jumbotron-text h3-responsive white-text text-justify mx-2"><i class="fa fa-handshake-o"></i> Connect With Us</h3></a>
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col-md-12 center-justified">
+                    <strong class="h6-responsive">Welcome to IgnouCalculator's student-details section. You can find the details of any <span class="text-info">IGNOU</span> student just by filling the form below.</strong>
+                </div>
+            </div>
+            <div class="row py-3 px-2">
+                <div class="col-md-12 alert alert-info alert-dismissable center-justified">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong><i class="fa fa-hand-o-right animated 1s slideInRight" aria-hidden="true"></i>&nbsp;&nbsp;Dear visitors, displaying of results could take some time based on server load and traffic, Do not refresh the page in the meantime for expected response.</strong>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 mx-2 my-2 student-details-form-wrapper rounded">
+                    <form name="details_form" id="details_form" class="form-inline" autocomplete="off">
+                        <div class="md-form mx-auto">
+                            <input type="text" size="40" class="form-control text-center" name="eno" id="eno" placeholder="<?php if(isset($_SESSION['user']['eno'])) echo $_SESSION['user']['eno']; else echo 'Enter Your Enrollment Number'; ?>"/>
+                        </div>
+                        <div class="md-form mx-auto">
+                            <select name="program" id="standard" class="program custom-select form-control">
+                                <option disabled selected>Select</option>
+                                <?php
+                                    foreach($this->programmes as $progs){
+                                        echo "<option value='".$progs['p_name']."'>".$progs['p_name']."</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <br/>
+                        <div class="md-form mx-auto">
+                            <input type="text" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                            <button class="btn btn-mdb" type="submit" id="submit" name="submit">Submit <i class="fa fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row"><div class="col-md-2"></div><div class="col-md-8"><div id="details"></div></div><div class="col-md-2"></div></div>
+            <div class="row" id="instructions">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 py-5 mb-5">
+                    <div>
+                        <div class="row">
+                            <ul class="list-group text-justify mx-2">
+                                <li class="list-group-item list-group-item-success text-center"><strong>Instructions</strong></li>
+                                <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;Get details of any IGNOU student such as name / address / contact details and much more just by entering their enrollment number and programme code.</li>
+                                <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;All data that is displayed here is acquired from IGNOU's official site and is already in public domain.</li>
+                                <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;IgnouCalculator is not liable for any privacy violation, as the information is provided by IGNOU online.</li>
+                                <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;Student's can also update their information provided here, but IGNOU currently does not provides an online portal to do so.</li>
+                                <li class="list-group-item"><span class="badge badge-pill indigo z-depth-1"><i class="fa fa-bullhorn" aria-hidden="true"></i></span>&nbsp;&nbsp;To update your information, contact your regional center.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                new WOW().init();
+
+                $(function () {
+                    $("#standard").customselect();
+                });
+
+                $("#details_form").submit(function (event) {
+                    event.preventDefault();
+                    get_student_details();
+                    $("#instructions").hide();
+                });
+                
+                $("#my_scroll").on('click', function(event) {
+                    smooth_scroller(this);
+                });
+                
+                $("#modal-launcher").on("click", function(){
+                    $('.navbar-toggler').click();
+                });
+            });
+        </script>

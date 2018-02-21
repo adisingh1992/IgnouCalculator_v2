@@ -1,0 +1,101 @@
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 py-3 text-center">
+                    <h2 class="h2-responsive animated 1s fadeInUp" style="font-weight:900;"><strong>MCA Grade Card</strong></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 flex-center text-center">                                  
+                    <form name="grade_form" id="grade_form" class="form-inline" autocomplete="off">
+                        <div class="form-row">
+                            <div class="md-form">
+                                <input type="text" id="eno" name="eno" class="form-control text-center" size="40" placeholder="<?php if(isset($_SESSION['user']['eno'])) echo $_SESSION['user']['eno']; else echo 'Enter Enrollment Number'; ?>"/>
+                                <input type="text" name="form_id" id="form_id" hidden value="<?php echo $vars; ?>"/>
+                                <input type="text" name="program" id="program" hidden value="MCA"/>
+                                <button type="submit" class="btn btn-mdb" name="submit" id="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row"><div id="friends_list" class="col-md-12 mb-3 text-center"></div></div>
+            <div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 id="name" style="font-weight: bold;"></h4>
+                        <h4 id="enum" style="font-weight: bold;"></h4>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-12" id="data_table"></div>
+                </div>
+            </div>
+            <div id="instructions">
+                <div class="row center-justified">
+                    <div class="col-md-12 alert alert-info alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong><i class="fa fa-hand-o-right animated 1s slideInRight" aria-hidden="true"></i>&nbsp;&nbsp;Dear visitors, displaying of results could take some time based on server load and traffic, Do not refresh the page in the meantime for expected response.</strong>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center"><strong class="text-primary h4-responsive">LET'S CALCULATE YOUR RESULTS</strong></div>
+                        <p class="mx-2 h6-responsive center-justified" style="line-height:1.7;word-spacing:1px;"><strong>Welcome to IgnouCalculator's grade-card section, this percentage calculator allows you to get detailed analysis of your marks. Now no more hours of manual head-scratching trying to calculate academic performance of yourself and your friends, just fill your enrollment number above and get the results in seconds.</strong></p>
+                    </div>
+                </div>
+                <div class="row py-3">
+                    <div class="col-md-5">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/language.png" class="b-lazy img-fluid" alt="project-language">
+                    </div>
+                    <div class="col-md-7 center-justified">
+                        <h6 class="h6-responsive py-5" id="counter" style="line-height:1.7;word-spacing:1px;">Every IGNOU student needs ideas and suggestions to make a final year project / synopsis, for the partial fulfillment of the requirement for BCA / MCA programmes. Get Access to <span class="counter-value text-custom" data-count="1000">0</span><sup class="text-danger">+</sup>&nbsp;free projects prototypes and synopsis in various technologies and languages. Get free access just by becoming a member of IgnouCalculator and access our vast project repository.</h6>
+                        <div><a href="#" data-toggle="modal" data-target="#myModal"><button class="btn btn-outline-danger"><i class="fa fa-handshake-o" aria-hidden="true"></i>&nbsp;&nbsp;Join Us today</button></a></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="center-justified flex-center">
+                            <h6 class="px-2 h6-responsive" style="line-height:1.7;word-spacing:1px;"><span class="h4-responsive text-primary"><strong>Semester Performance: </strong></span>If you are eager to analyze your performance semester-wise, this tool fulfills this need too. IgnouCalculator allows you to check your program performance both in overall and semester-wise manner in graphical as well as textual representations. Using this tool you can enhance and tweak your skills as per your performance.</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/chart3.png" class="b-lazy img-fluid" alt="charts">
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">   
+                    <div class="col-md-3"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="templates/static/images/Asgt.png" class="b-lazy img-fluid" alt="assignments"></div>
+                    <div class="col-md-9 ">
+                        <div class="center-justified flex-center">
+                            <h6 class="px-2 h6-responsive" style="line-height:1.7;word-spacing:1px;"><span class="text-primary h4-responsive"><a href="assignments/" target="_blank"><strong>Solved Assignments:</strong></a></span> Team IgnouCalculator churns out assignment solution-sets every semester. The assignments are prepared in-line with IGNOU's study materials, are concise and to-the-point which will help a student complete the tedious task. The assignments are a compulsory requirement for BCA / MCA programmes which carry 30% weightage on overall marks, therefore the student must take this task very seriously.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-12 text-center">
+                        <h4 class="h4-responsive"><strong>Worried about Term-End exams?</strong></h4>
+                        <h6 class="h6-responsive center-justified" style="line-height:1.7;word-spacing:1px;">Team IgnouCalculator got you covered here too! We provide video tutorials for crucial courses like BCS-012, BCS-042, MCS-031 etc. Access video tutorials along with proper guidance of typical subjects by our team and crack IGNOU term-end exams easily.</h6>
+                        <a href="videos.php"><button class="btn btn-outline-black wow zoomIn" data-wow-delay="1s"><i class="fa fa-video-camera"></i>&nbsp;&nbsp; Video Tutorials</button></a>
+                        <br/>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                new WOW().init();
+                smooth();
+
+                $("#grade_form").submit(function (event) {
+                    event.preventDefault();
+                    get_form_data('mca-grade-card.php');
+                });
+            });
+        </script>

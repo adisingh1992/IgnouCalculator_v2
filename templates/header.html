@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>IgnouCalculator</title>
+        <meta charset="utf-8">
+        <meta name=viewport content="width=device-width, initial-scale=1.0">
+        <meta name=description content="IgnouCalculator -- an information resource designed to help you get a more comprehensive analysis of your grades.">
+        <meta name=keywords content="IGNOU, BCA, MCA, calculator, grade card, percentage calculator, ignou">
+        <meta name=author content=Scorpion>
+        <link rel=apple-touch-icon sizes=76x76 href=templates/static/favicon/apple-touch-icon.png>
+        <link rel=icon type=image/png sizes=32x32 href=templates/static/favicon/favicon-32x32.png>
+        <link rel=icon type=image/png sizes=16x16 href=templates/static/favicon/favicon-16x16.png>
+        <link rel=manifest href=templates/static/favicon/manifest.json>
+        <link rel=mask-icon href=templates/static/favicon/safari-pinned-tab.svg color=#5bbad5>
+        <link rel="shortcut icon" href=templates/static/favicon/favicon.ico>
+        <meta name=msapplication-config content=templates/static/favicon/browserconfig.xml>
+<!--        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+        <link href="templates/static/css/mdb.min.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+        <link href="templates/static/css/styles.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+        <link href="templates/static/css/select-box.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'">
+        <noscript>
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+            <link href="templates/static/css/mdb.min.css" rel="stylesheet">
+            <link href="templates/static/css/styles.css" rel="stylesheet">
+            <link href="templates/static/css/select-box.css" rel="stylesheet">
+        </noscript>-->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="templates/static/css/mdb.min.css" rel="stylesheet">
+        <link href="templates/static/css/styles.css" rel="stylesheet">
+        <link href="templates/static/css/select-box.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="ajax_loader" class="loading"></div>
+        <nav class="navbar navbar-expand-lg navbar-dark special-color-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><span style="font-family:'Comic Sans MS' !important;font-size:20px">IgnouCalculator</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown btn-group">
+                            <a class="nav-link dropdown-toggle" id="navabrDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Percentage Calculator</a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="bca-grade-card.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;BCA Calculator</a>
+                                <a class="dropdown-item" href="mca-grade-card.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;MCA Calculator</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown btn-group">
+                            <a class="nav-link dropdown-toggle" id="navabrDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Student Zone</a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="student-details.php"><i class="fa fa-tasks" aria-hidden="true"></i>&nbsp;&nbsp;Student Details</a>
+                                <a class="dropdown-item" href="student-list.php"><i class="fa fa-list-ol" aria-hidden="true"></i>&nbsp;&nbsp;Student List</a>
+                                <a class="dropdown-item" href="question-papers.php"><i class="fa fa-question-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Question Papers</a>
+                                <a class="dropdown-item" href="books.php"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;Ignou Books</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown btn-group">
+                            <a class="nav-link dropdown-toggle" id="navabrDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Assignments</a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://webservices.ignou.ac.in/assignments/" target="_blank"><i class="fa fa-question-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;Assignments</a>
+                                <a class="dropdown-item" href="/assignments/" target="_blank"><i class="fa fa-database" aria-hidden="true"></i>&nbsp;&nbsp;Solved Assignments</a>
+                                <a class="dropdown-item" href="assignment-status.php"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;Submission Status</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown btn-group">
+                            <a class="nav-link dropdown-toggle" id="navabrDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Project Reports & Synopsis</a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="project-and-synopsis.php"><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;&nbsp;Free Projects</a>
+                                <a class="dropdown-item" href="projects.php"><i class="fa fa-edit" aria-hidden="true"></i>&nbsp;&nbsp;Assisted Projects</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="videos.php">Online Classes</a>
+                        </li>
+                    </ul>
+                    <ul class="nav ml-auto">
+                        <?php if (isset($_SESSION["user"])) { ?>
+                        <li class="nav-item dropdown btn-group">
+                            <a class="nav-link dropdown-toggle" id="navabrDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><?php echo $_SESSION['user']['name']; ?></a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="profile.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;My Profile</a>
+                                <a class="dropdown-item" href="logout.php"><i class="fa fa-graduation-cap" aria-hidden="true"></i>&nbsp;&nbsp;Logout</a>
+                            </div>
+                            <img src="<?php echo $_SESSION['user']['image']; ?>" alt="profile_picture" height="40px" width="40px" style="border-radius: 50%;"/>
+                            <div id="online" style="height: 4px !important; width: 4px !important; background-color: none; border-radius:50%; margin-top: 3px !important"></div>
+                        </li>
+                        <script>
+                            function offline() {
+                                document.getElementById("online").style.backgroundColor = "darkred";
+                                document.getElementById("online").style.transition = "all 0.5s";
+                                setTimeout("online()", 500);
+                            }
+                            setTimeout("offline()", 500);
+
+                            function online() {
+                                document.getElementById("online").style.backgroundColor = "green";
+                                document.getElementById("online").style.transition = "all 0.5s";
+                                setTimeout("offline()", 500);
+                            }
+                        </script>
+                        <?php } else { ?>
+                        <div style="overflow-y: auto !important;" class="modal hide animated 1s zoomInDown" id="myModal" role="dialog" data-keyboard="false" aria-hidden="true" data-backdrop="static" aria-labelledby="Information" tabindex="-1">
+                             <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="card card-image" style="background-image: url('templates/static/images/banner1.jpg');background-size:cover;">
+                                        <div class="modal-header">
+                                            <div class="typing">
+                                                <h6 class="modal-title text-white h6-responsive">Welcome to IgnouCalculator!</h6>
+                                            </div>
+                                            <button type="button" class="close" data-dismiss="modal" id="login-close">&times;</button>
+                                        </div>
+                                        <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+                                            <div class="col-md-12 text-center">
+                                                <h4 class="h4-ressponive center-justified">Sign-in with your favorite<br/>Social-Network</h4>
+                                                <h6 class="h6-respnsive center-justified">Sign-up to IgnouCalculator and get access to more comprehensive and detailed analysis of your grades, exclusive study materials, project prototypes and much more.</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row d-inline-flex p-2">
+                                            <div class="col-md-6 col-xs-6 text-center">
+                                                <button id="fb_login" class="loginBtn loginBtn--facebook">
+                                                    Login with Facebook
+                                                </button>
+                                            </div>
+                                            <div class="col-md-6 col-xs-6 text-center">
+                                                <button id="g_login" class="loginBtn loginBtn--google">
+                                                    Login with Google
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function(){
+                                $("#fb_login").on("click", function () {
+                                    window.location.href = "fb_oauth/fblogin.php";
+                                });
+                                $("#g_login").on("click", function () {
+                                    window.location.href = "g_oauth/glogin.php";
+                                });
+                            });
+                        </script>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#myModal" id="login-button">Login / Registration</a>
+                        </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div id="error"></div>
+                </div>
+            </div>
+        </div>
