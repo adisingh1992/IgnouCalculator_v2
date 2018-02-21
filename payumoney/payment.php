@@ -21,25 +21,6 @@
         $payment["service_provider"] = $SERVICE_PROVIDER;
         $hash = calculate_hash($payment, $SALT, $hashSequence);
 ?>
-<!--<html>
-    <head></head>
-    <body>
-        <form action="<?php echo $action; ?>" method="POST" autocomplete="off">
-            <input type="text" name="firstname" value="<?php echo $payment["firstname"]; ?>" readonly/>
-            <input type="text" name="phone" value="<?php echo $payment["phone"]; ?>" readonly/>
-            <input type="text" name="email" value="<?php echo $payment["email"]; ?>" readonly/>
-            <input type="text" name="txnid" value="<?php echo $payment["txnid"]; ?>" readonly/>
-            <input type="text" name="productinfo" value="<?php echo $payment["productinfo"]; ?>" readonly/>
-            <input type="text" name="amount" value="<?php echo $payment["amount"]; ?>" readonly/>
-            <input type="text" name="key" value="<?php echo $payment["key"]; ?>" readonly hidden/>
-            <input type="text" name="surl" value="<?php echo $payment["surl"]; ?>" readonly hidden/>
-            <input type="text" name="furl" value="<?php echo $payment["furl"]; ?>" readonly hidden/>
-            <input type="text" name="service_provider" value="<?php echo $payment["service_provider"]; ?>" readonly hidden/>
-            <input type="text" name="hash" value="<?php echo $hash; ?>" readonly hidden/>
-            <input type="submit" name="submit" value="Proceed To Payment"/>
-        </form>
-    </body>
-</html>-->
 <html>
     <head>
         <title>IgnouCalculator Payment Gateway</title>
