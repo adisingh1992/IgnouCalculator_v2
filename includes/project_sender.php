@@ -36,9 +36,9 @@
         //Password to use for SMTP authentication
         //$mail->Password = "adi@ignoucalculator";
 
-        $mail->Username = "projects@teamscorpion.in";
+        $mail->Username = "abc@xyz.in";
         //Password to use for SMTP authentication
-        $mail->Password = "alec177fig600";
+        $mail->Password = "abcd";
 
         //Set who the message is to be sent from
         $mail->setFrom('projects@teamscorpion.in', 'IgnouCalculator');
