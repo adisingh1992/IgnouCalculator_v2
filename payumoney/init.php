@@ -6,7 +6,7 @@
     //$PAYU_BASE_URL = "https://secure.payu.in";			// For Production Mode
     $SUCCESS_URL = "http://localhost:8000/payumoney/callback.php";
     $FAILURE_URL = "http://localhost:8000/payumoney/callback.php";
-    
+    //
     $action = $PAYU_BASE_URL."/_payment";
     
     $SERVICE_PROVIDER = "payu_paisa";
